@@ -8,7 +8,7 @@
    $("#submit").on("click", function() {
     var city = $("#input").val();
     console.log("this is " + city);
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=7a966b580102119ddbcfa34b8cdafb5b";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=7a966b580102119ddbcfa34b8cdafb5b";
     console.log("this is url " + queryURL);
 
 
