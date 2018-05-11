@@ -1,10 +1,7 @@
 
 
 
-  // var apiKey = "7a966b580102119ddbcfa34b8cdafb5b";
-  // var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&units=imperial&appid=" + apiKey;
-
-
+  
    $("#submit").on("click", function() {
     var city = $("#input").val();
     console.log("this is " + city);
@@ -25,7 +22,7 @@
         console.log("Wind speed: " + response.wind.speed);
         console.log("Sunrise: " + response.sys.sunrise);
         console.log("Sunset: " + response.sys.sunset);
-        console.log("img: " + " http://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
+        console.log("img: " + " https://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
 
     $("#city").text("Results for: " + response.name + " , " + response.sys.country);
 
@@ -36,7 +33,7 @@
     $("#sunrise").text("Sunrise: " + response.sys.sunrise);
     $("#sunset").text("Sunset: " + response.sys.sunset);
 
-    $('#display').html("<img src='http://openweathermap.org/img/w/" + response.weather[0].icon + ".png'>");
+    $('#display').html("<img src='https://openweathermap.org/img/w/" + response.weather[0].icon + ".png'>");
 
      
     });
