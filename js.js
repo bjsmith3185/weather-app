@@ -20,8 +20,8 @@
         console.log("Temperature: " + response.main.temp);
         console.log("Humidity: " + response.main.humidity + "%");
         console.log("Wind speed: " + response.wind.speed);
-        console.log("Sunrise: " + response.sys.sunrise);
-        console.log("Sunset: " + response.sys.sunset);
+        console.log("Sunrise: " + changeTime(response.sys.sunrise));
+        console.log("Sunset: " + changeTime(response.sys.sunset));
         console.log("img: " + " https://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
 
     $("#city").text("Results for: " + response.name + " , " + response.sys.country);
@@ -30,17 +30,28 @@
     $("#temp").text("Temperature: " + response.main.temp);
     $("#humidity").text("Humidity: " + response.main.humidity + "%");
     $("#wind").text("Wind speed: " + response.wind.speed);
-    $("#sunrise").text("Sunrise: " + response.sys.sunrise);
-    $("#sunset").text("Sunset: " + response.sys.sunset);
+    $("#sunrise").text("Sunrise: " + changeTime(response.sys.sunrise));
+    $("#sunset").text("Sunset: " + changeTime(response.sys.sunset));
 
     $('#display').html("<img src='https://openweathermap.org/img/w/" + response.weather[0].icon + ".png'>");
 
+
+// function to change time from unix to hh:mm
+    function changeTime(pass) {   
+    var a = new Date(+pass * 1000);
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var time = hour + ":" + min;
+    return time;
+    console.log(time);
+    };
      
     });
 
-});
+    });
 
-//var icon = ("<img src='http://openweathermap.org/img/w/" + response.weather[0].icon + ".png'>");
 
-//then
+
+
+
 
